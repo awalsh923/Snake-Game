@@ -1,0 +1,19 @@
+<h2 class="page-header">Leaderboards</h2>
+<form action="/leaderboards/:id" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<% leaderboards.forEach(leaderboard => { %>
+  <div class="leaderboard-row">
+    <div class="leaderboard-name"><%= leaderboard.name %></div>
+    <div class="leaderboard-score"><%= leaderboard.score %></div>
+  </div>
+<% }) %>
