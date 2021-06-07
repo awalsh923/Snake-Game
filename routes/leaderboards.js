@@ -5,7 +5,7 @@ const Leaderboard = require("../models/leaderboard")
 // Top 10 Leaderboards
 router.get('/leaderboards', async (req, res) => {
   try {
-    const leaderboards = await Leaderboard.find().sort({score: -1}).limit(10);
+    const leaderboards = await Leaderboard.find().sort({score: -1}).collation({locale: "en_US", numericOrdering: true}).limit(10);
     res.render('leaderboards/index', {
       leaderboards: leaderboards
     })
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
     const newLeaderboard = await leaderboard.save()
     res.redirect(`leaderboards/${newLeaderboard.id}`)
   } catch {
-    res.render("leaderboards/entryerror", {errorMessage:"Error creating leaderboard entry"})
+    res.render("error/error", {errorMessage:"Error creating leaderboard entry"})
   }
 })
 

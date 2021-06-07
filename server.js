@@ -27,5 +27,8 @@ db.once('open', error => console.log('Connected to Mongoose'))
 app.use('/', indexRouter)
 app.use('/', leaderboardsRouter)
 
+app.get('*', function(req, res) {
+    res.render('error/error', {errorMessage:'Page Not Found'})
+})
 
 app.listen(process.env.PORT || 3000)
