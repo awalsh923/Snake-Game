@@ -7,48 +7,162 @@
       justify-content: center;
       align-items: center;
       margin: 0;
-      background-color: rgb(255, 255, 255);
+      background-color: #414040;
     }
 
     #game-board {
       background-color: #CCC;
-      width: 100vmin;
-      height: 100vmin;
+      top: 5%;
+      right: 27.5%;
+      width: 45%;
+      height: 90%;
       display: grid;
+      position: fixed;
       grid-template-rows: repeat(28, 1fr);
       grid-template-columns: repeat(28, 1fr);
+      border: 3px solid rgb(2, 212, 2);
     }
 
     .snake {
-      background-color: hsl(200, 100%, 50%);
+      background-color: hsl(125, 100%, 50%);
       border: .25vmin solid black;
     }
 
     .food {
-      background-color: hsl(50, 100%, 50%);
+      background-color: hsl(9, 100%, 50%);
       border: .25vmin solid black;
     }
+
+    .game-cover {
+      display: block;
+      position: fixed;
+      top: 5%;
+      right: 27.5%;
+      width: 45%;
+      height: 90%;
+      text-decoration: none;
+      text-align: center;
+      color: rgb(2, 212, 2);
+      font-size: 1.5em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 3px solid rgb(2, 212, 2);
+    }
+
+    .game-cover-text {
+      display: block;
+      position: relative;
+      top: 45%;
+      left: 25%;
+      width: 50%;
+    }
+
+    .displayed-score {
+      position: fixed;
+      top: 45%;
+      right: 8.5%;
+      text-decoration: none;
+      color: rgb(2, 212, 2);
+      font-size: 1.5em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+    }
+
+    .post-game {
+      position: fixed;
+      top: 45%;
+      right: 40%;
+      text-decoration: none;
+      color: rgb(2, 212, 2);
+      font-size: 1.2em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+    }
+
+    .form-item {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-content: center;
+      grid-gap: 5px;
+      text-align: center;
+    }
+
+    .enter-name {
+      background-color: black;
+      border-radius: 4px;
+      border-color: rgb(2, 212, 2);
+      font-family: 'Press Start 2P', cursive;
+      color: rgb(2, 212, 2);
+    }
+
+    .form-bottom {
+      margin-top: 2.75%;
+      display:inline-block;
+      width: 100%;
+    }
+
+    .submit-name {
+      position: relative;
+      text-decoration: none;
+      background-color: rgb(2, 212, 2);
+      color: black;
+      font-size: 1.2em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+      border: 1px solid rgb(2, 212, 2);
+      border-radius: 8px;
+      right: -6%;
+    }
+
+    .submit-name:hover {
+      background-color: black;
+      color:rgb(2, 212, 2);
+    }
+
+    .play-again {
+      position: relative;
+      text-decoration: none;
+      word-spacing: -0.5em;
+      background-color: rgb(2, 212, 2);
+      color: black;
+      font-size: 1.2em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+      border: 1px solid rgb(2, 212, 2);
+      border-radius: 8px;
+      right: -6%;
+    }
+
+    .play-again:hover {
+      background-color: black;
+      color:rgb(2, 212, 2);
+    }
+
   </style>
   <script src="./snake/game.js" defer type="module"></script>
 </head>
 
 <body>
-  <div id="game-cover">this text goes over the gameboard</div>
-  <div id="game-board"></div>
-  <div hidden id="post-game">
-  <form action="/" method="POST">
-    <div class="form-row">
-      <div class="form-item">
-        <label>Name</label>
-        <input type="text" name="name" minlength="1" maxlength="10" required>
-        <input  id="final-score" type="hidden" name="score">
-      </div>
+  <div class="game-cover" id="game-cover">
+    <div class="game-cover-text">
+      Press an arrow key to start
     </div>
-    <div class="form-row form-row-end btn-row">
-      <button class="btn btn-primary" type="submit">Create</button>
-      <a href="/">Cancel</a>
-    </div>
-  </form>
   </div>
-  <div id="displayed-score">Score: 0</div>
+  <div id="game-board"></div>
+  <div hidden id="post-game" class="post-game">
+    <form action="/" method="POST">
+      <div class="form-item">
+        <label>Name:</label>
+        <input class="enter-name" type="text" name="name" minlength="1" maxlength="10" required>
+        <input id="final-score" type="hidden" name="score">
+      </div>
+      <div class="form-bottom">
+        <button class="submit-name" type="submit">Enter</button>
+        <a href="/" class="play-again">Play Again</a>
+      </div>
+    </form>
+  </div>
+  <div class="displayed-score" id="displayed-score">Score: 0</div>
 </body>

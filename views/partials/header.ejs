@@ -1,8 +1,53 @@
+<head>
+  <style>
+    .header-nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 19%;
+      height: 100%;
+      border-right: 3px solid rgb(2, 212, 2);
+      background: #0c0c0c;
+      word-spacing: 2em;
+      text-align: center;
+    }
+
+    .play-sidebar {
+      position: relative;
+      top: 5%;
+      text-decoration: none;
+      color: rgb(2, 212, 2);
+      font-size: 3em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 500;
+    }
+
+    .play-sidebar:hover{
+      font-size: 3.5em;
+    }
+
+    .leaderboards-sidebar {
+      position: relative;
+      top: 10%;
+      text-decoration: none;
+      color: rgb(2, 212, 2);
+      font-size: 1.5em;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+    }
+
+    .leaderboards-sidebar:hover{
+      font-size: 1.8em;
+    }
+
+  </style>
+</head>
+
 <header>
-    <nav class="header-nav">
-      <a class="header-title" href="/">Snek</a>
-      <ul>
-        <li><a href="/leaderboards">Leaderboards</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="header-nav">
+    <a href="/" class="play-sidebar">Play</a>
+    <br />
+    <a href="/leaderboards" class="leaderboards-sidebar">Leaderboards</a>
+  </nav>
+</header>

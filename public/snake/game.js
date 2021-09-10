@@ -17,6 +17,9 @@ function main(currentTime) {
     finalScore.value = score
     postGame.style.visibility = 'visible'
     postGame.style.display = 'inline'
+    displayedScore.style.top = '42%'
+    displayedScore.style.right = '51.8%'
+    displayedScore.style.fontSize = '1.2em'
     return
   }
 

@@ -21,7 +21,7 @@ router.get('/leaderboards/:id', async (req, res) => {
     searchOptions.name = new RegExp(req.query.name, 'i')
   }
   try {
-    const leaderboards = await Leaderboard.find(searchOptions).sort({score: -1}).limit(10);
+    const leaderboards = await Leaderboard.find(searchOptions).sort({score: -1}).collation({locale: 'en_US', numericOrdering: true}).limit(10);
     res.render('leaderboards/search', {
       leaderboards: leaderboards,
     })
