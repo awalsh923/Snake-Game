@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
   })
   try {
     const newLeaderboard = await leaderboard.save()
-    res.redirect(`leaderboards/${newLeaderboard.id}`)
+    res.redirect(`leaderboards`)
   } catch {
     res.render("error/error", {errorMessage:"Error creating leaderboard entry"})
   }

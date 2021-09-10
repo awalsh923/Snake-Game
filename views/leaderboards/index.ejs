@@ -1,8 +1,9 @@
 <head>
   <style>
     body {
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width:100%;
+      position: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -12,12 +13,13 @@
 
     .top-10 {
       display: block;
-      position: fixed;
-      top: 5%;
-      left: 37.5%;
+      position: relative;
+      top: -40%;
+      left: 40%;
       width: 40%;
       text-align: center;
       color: rgb(2, 212, 2);
+      word-spacing: -0.5em;
       font-size: 3em;
       font-family: 'Press Start 2P', cursive;
       font-weight: 400;
@@ -25,19 +27,18 @@
 
     .leaderboard-display {
       display: block;
-      position: fixed;
+      position:relative;
       width: 40%;
-      left: 37.5%;
-      top: 15%;
+      left: 0%;
+      top: -5%;
     }
 
     .leaderboard-row {
       display: block;
       position: relative;
-      top: 5%;
-      left: 25%;
       width: 50%;
-      text-align: center;
+      left:42%;
+      text-align: left;
       color: rgb(2, 212, 2);
       font-size: 1.2em;
       font-family: 'Press Start 2P', cursive;
@@ -45,9 +46,10 @@
     }
 
     .search-form {
-      position: fixed;
-      top: 60%;
-      right: 32.5%;
+      display: block;
+      position: relative;
+      top: 30%;
+      right: 30%;
       text-decoration: none;
       color: rgb(2, 212, 2);
       font-size: 1.2em;
